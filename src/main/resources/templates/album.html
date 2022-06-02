@@ -13,11 +13,11 @@
         <label for="artist">Artist</label>
         <input type="text" name="artist">
         <label for="length">Album Length</label>
-        <input type="text" name="length">
+        <input type="number" name="length">
         <label for="imgUrl">Album Image</label>
         <input type="text" name="imgUrl">
         <label for="songCount">song count</label>
-        <input type="text" name="songCount">
+        <input type="number" name="songCount">
         <input type="submit" value="Add Album">
     </fieldset>
 </form>
@@ -29,5 +29,17 @@
     <img th:src="${album.imgUrl}"/>
     <li th:text="${album.songCount}"/>
 </ul>
+<form action="/addSong" method="post">
+    <fieldset>
+        <legend>Add song to album</legend>
+        <label for="title">Song Title</label>
+        <input type="text" name="title">
+        <label for="length">Length </label>
+        <input type="number" name="length">
+        <label for="trackNumber">Track Number</label>
+        <input type="number" name="trackNumber">
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
 </body>
 </html>
