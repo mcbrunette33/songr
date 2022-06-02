@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Locale;
-@Controller
+@Controller // "parent" responsibility for resources inside this class for paths below
 public class HelloWorld {
     @GetMapping("/sayhello/{name}")
     @ResponseBody
@@ -15,7 +15,8 @@ public class HelloWorld {
         return "Hello " + upperName;
 
     }
-    @GetMapping("hello")
+    @GetMapping("/hello") //GET route for /hello paths do not have to be the same thing as the method
+    @ResponseBody //use this for response
     public String helloWorld(){
         return "helloWorld";
     }

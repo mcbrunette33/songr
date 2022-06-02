@@ -1,9 +1,13 @@
-package com.mikebrunette401.songr.controllers;
+package com.mikebrunette401.songr.models;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.persistence.*;
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
     public String title;
     public String artist;
     public int length;
@@ -17,10 +21,7 @@ public class Album {
         this.songCount = songCount;
         this.imgUrl = imgUrl;
     }
-    public List<Album> createAlbum(){
-        List<Album> newAlbum = new ArrayList<>();
-        newAlbum.add("Fire on the Horizon", "Stick Figure", 700, 2, "ff");
-        newAlbum.add("Choice is Yours", "Stick Figure", 700, 3, "ff");
-        newAlbum.add("World on Fire", "Stick Figure", 700, 7, "ff");
+    public Album(){
+
     }
 }
